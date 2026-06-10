@@ -2900,10 +2900,10 @@ function renderBarChart(canvasId, { labels, datasets }, key) {
   if (!labels || !labels.length) { console.warn('renderBarChart: no labels for', canvasId); return; }
   if (state.charts[canvasId]) { try { state.charts[canvasId].destroy(); } catch(e){} }
 
-  // Hardcoded pixel dimensions — never 0, never depends on layout
+  // responsive:false → Chart.js uses canvas.width/height directly (ignores container)
   ctx.width  = 600;
   ctx.height = 260;
-  ctx.style.cssText = 'width:600px;height:260px;max-width:100%;display:block;';
+  ctx.style.cssText = 'width:600px;height:260px;display:block;';
 
   console.log('Creating chart', canvasId, 'labels:', labels.length, 'datasets:', datasets.length,
     'offsetWidth:', ctx.offsetWidth, 'clientWidth:', ctx.clientWidth);
@@ -2912,7 +2912,7 @@ function renderBarChart(canvasId, { labels, datasets }, key) {
     type: 'bar',
     data: { labels, datasets },
     options: {
-      responsive: true,
+      responsive: false,
       maintainAspectRatio: false,
       animation: { duration: 300 },
       plugins: {
