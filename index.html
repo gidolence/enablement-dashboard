@@ -936,7 +936,7 @@ tbody tr:last-child { border-bottom: none; }
 <script id="dataAutoLoad">
 (function(){
   if(window.location.protocol==='https:' || window.location.hostname==='localhost'){
-    fetch('./data.json?v=1782415080951')
+    fetch('./data.json?v=1782415099545')
       .then(function(r){return r.json();})
       .then(function(d){window.__EBANX_V3__=d;})
       .catch(function(){});
@@ -1141,7 +1141,7 @@ tbody tr:last-child { border-bottom: none; }
         <input id="ghTokenInput" type="password" placeholder="ghp_xxxxxxxxxxxx" style="width:100%;border:1px solid #E5E9F0;border-radius:8px;padding:10px 12px;font-size:.82rem;outline:none;box-sizing:border-box;">
         <div style="font-size:.7rem;color:#9CA3AF;margin-top:4px;">Token saved locally. Generate at github.com/settings/tokens (repo scope).</div>
       </div>
-      <div id="ghStatus" style="display:none;font-size:.8rem;padding:10px 12px;border-radius:8px;margin-bottom:14px;"></div>
+      <div id="ghStatus" style="display: none; background: rgb(209, 250, 229); color: rgb(6, 95, 70); border-radius: 8px; padding: 10px 12px;">✅ Published! <a href="https://gidolence.github.io/enablement-dashboard/" target="_blank" style="color:#065F46;font-weight:700;">Open →</a><br><small style="opacity:.7">Changes live in ~1 minute.</small></div>
       <div style="display:flex;gap:10px;">
         <button onclick="doPublish()" id="ghPublishBtn" style="flex:1;background:var(--color-knowledge-accent);color:#fff;border:none;border-radius:8px;padding:11px;font-size:.85rem;font-weight:700;cursor:pointer;" disabled="">⏳ Publishing…</button>
         <button onclick="document.getElementById('ghModal').style.display='none'" style="background:#F3F4F6;color:#374151;border:none;border-radius:8px;padding:11px 18px;font-size:.85rem;font-weight:600;cursor:pointer;">
