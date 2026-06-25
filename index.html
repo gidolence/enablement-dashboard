@@ -4379,6 +4379,11 @@ window.addEventListener('DOMContentLoaded', () => {
     // On GitHub Pages: try to load data.json automatically
     const isHosted = window.location.protocol === 'https:' || window.location.hostname === 'localhost';
     if (isHosted) {
+      // On GitHub Pages: hide Update Data and Publish buttons — viewers don't need them
+      const refreshBtn = document.getElementById('refreshBtn');
+      const publishBtn = document.getElementById('publishBtn');
+      if (refreshBtn) refreshBtn.style.display = 'none';
+      if (publishBtn) publishBtn.style.display  = 'none';
       setLoading(true);
       fetch('./data.json?v=' + Date.now())
         .then(r => r.ok ? r.json() : null)
